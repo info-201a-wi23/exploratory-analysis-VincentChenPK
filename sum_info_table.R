@@ -1,8 +1,8 @@
 library(dplyr)
 library(tidyverse)
-
+library(kableExtra)
 # Load data sets
-offices <- read.csv("offices5_score.csv", stringsAsFactors = F)
+offices <- read.csv("data_set/offices5_score.csv", stringsAsFactors = F)
 
 # Aggregate table illustrating the prevalence of gaming company offices across different countries
 office_prevalence_df <- offices %>%

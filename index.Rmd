@@ -83,7 +83,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ```
 
 ### Chart 2
-``````{r, echo = FALSE}
+``````{r, echo = FALSE, message = FALSE}
 source("chart2.R", local = knitr::knit_global())
 
 # Plotting the Pie Chart
@@ -119,3 +119,20 @@ ggplot(data = company_offices_per_country, aes(x = country_code, y = n)) +
 ```
 
 I chose to include a bar chart of the log of the number of company offices in each country because it is still representative of how many more offices there are in some countries without making the visual hard to look at. In the initial variation of this, I graphed the raw number and the US was a very long line where other countries looked closer to 0 on the graph. 
+
+### Table: Prevalence of Gaming Company Offices Across Different Countries 
+``````{r, echo = FALSE, message = FALSE}
+source("sum_info_table.R", local = knitr::knit_global())
+
+office_prevalence_df <- offices %>%
+  count(country_code) %>%
+  mutate("Number of Offices" = paste(n)) %>%
+  arrange(desc(n)) %>%
+  mutate("Country Code" = paste(country_code)) %>%
+  select(
+    "Country Code",
+    "Number of Offices"
+  ) %>%
+  slice_head(n = 10)
+kable(office_prevalence_df, format = "markdown")
+```
