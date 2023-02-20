@@ -83,24 +83,8 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ```
 
 ### Chart 2
-Load files
-``````{r, echo = FALSE, code = readLines("chart2.R")}
-read.csv("companies_1m.csv", stringsAsFactors = F)
-company_data <- read.csv("companies_1m.csv", stringsAsFactors = F)
-library("ggplot2")
-library("plotly")
-library("dplyr")
-
-Include a chart
-
-Sort data
-lat_90 <- company_data %>% filter(latitude > 45 & latitude <= 90)
-lat_45 <- company_data %>% filter(latitude > 0 & latitude <= 45)
-lat_neg_45 <- company_data %>% filter(latitude > -45 & latitude <= 0)
-lat_neg_90 <- company_data %>% filter(latitude > -90 & latitude <= -45)
-
-# Taking size of each Group as a measure of how many offices are there
-office_lat_data <- c(nrow(lat_90), nrow(lat_45), nrow(lat_neg_45), nrow(lat_neg_90))
+``````{r, echo = FALSE}
+source("chart2.R", local = knitr::knit_global())
 
 # Plotting the Pie Chart
 pie(office_lat_data, 
@@ -109,10 +93,10 @@ pie(office_lat_data,
     main = "Number of Tech Offices in Each Latitude Group",
     col = palette("Set2")
 )
-
+```
 Describe why you chose this chart and what information it reveals
 We chose to use a pie chart as it is an easy and quick way to observe how the data is organized by size. Since the pie chart would be too hard to read if it was sorted by all possible countries that have offices, we decided to sort the offices by their latitude data into 4 sections (-90 to -45, -45 to 0, o to 45, and 45 to 90). Our pie char then revealed that a large majority of the offices fall between the latitudes of 0 and 45.
-``` 
+
 ### Chart 3
 
 ``````{r, echo = FALSE}
@@ -132,6 +116,6 @@ ggplot(data = company_offices_per_country, aes(x = country_code, y = n)) +
                 labels = trans_format("log10", math_format(10^.x))) +
   coord_flip() +
   theme_bw()
-``` 
+```
 
 I chose to include a bar chart of the log of the number of company offices in each country because it is still representative of how many more offices there are in some countries without making the visual hard to look at. In the initial variation of this, I graphed the raw number and the US was a very long line where other countries looked closer to 0 on the graph. 
