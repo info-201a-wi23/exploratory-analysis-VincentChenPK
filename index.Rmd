@@ -84,7 +84,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 ### Chart 2
 Load files
-
+``````{r, echo = FALSE, code = readLines("chart2.R")}
 read.csv("companies_1m.csv", stringsAsFactors = F)
 company_data <- read.csv("companies_1m.csv", stringsAsFactors = F)
 library("ggplot2")
@@ -112,6 +112,7 @@ pie(office_lat_data,
 
 Describe why you chose this chart and what information it reveals
 We chose to use a pie chart as it is an easy and quick way to observe how the data is organized by size. Since the pie chart would be too hard to read if it was sorted by all possible countries that have offices, we decided to sort the offices by their latitude data into 4 sections (-90 to -45, -45 to 0, o to 45, and 45 to 90). Our pie char then revealed that a large majority of the offices fall between the latitudes of 0 and 45.
+``` 
 ### Chart 3
 
 ``````{r, echo = FALSE}
