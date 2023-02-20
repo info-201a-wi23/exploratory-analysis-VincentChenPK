@@ -3,62 +3,73 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
-## Project title
-
-Give your project a concise, interesting title that summarizes the entirety of your project
-
-### Authors
-
-Names of your team members
-
-### Date
-
-Winter 2022
-
-### Abstract
-
+Abstract
 No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
 
-### Keywords
+Our team is interested in exploring how external factors, such as location and gaming culture, influences where gaming companies establish their headquarters. With the gaming scene gaining traction in recent years, this notion is important because its insights can help illustrate the current trajectory of gaming company outreach and rationale for setting up office(s) in certain locations. To address this exploration, we plan to identify patterns and interesting phenomena within our dataset, namely locations seeing the largest concentration of gaming companies and supporting our insights through synthesizing relevant literature.
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+Keywords
+“Gaming company”, “design offices”, “video games and design”, “design scene”, “gaming demographics”
 
-### Introduction  
+Proposal
+Introduction As of 2020, the U.S. tech industry employs over 12.2 million workers and over 558,000 tech companies. While the tech industry grows, the number of tech offices grows as well. Our main question is to identify which locations are the best for gaming companies. This question is important because gaming companies would want the most efficient locations for both their employees and the company as a whole. This impacts where most gaming companies tend to be located and what areas are most prevalent in game design. In the dataset, we will be looking at different gaming companies and where they are located at - countrywide and with longitude/latitude. We will also look at where airports are located to determine how accessible these offices are and if they are located near major airports. We have come up with a few questions to guide our research: 1). Do gaming offices tend to be located near or away from the equator? 2). Which countries have the most gaming company offices? 3). Which airport has the most nearby offices? The motivation for these questions comes from wanting to understand tech companies better and how certain cities are considered more suitable for offices than others. Being able to pursue these questions will help us predict where future tech offices would most likely be located and see the trends behind their geographical locations of them.
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
-
-### Related Work  
+Related Work
 
 Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
 
-### The Dataset
+The topic of starting a gaming company or having a successful gaming company has been explored before. There are many factors at play and our focus is how physical location correlates with the success and the rating of companies. Some take the perspective of how to be successful from a cost/ business angle, they talk about expenditures and the accounting of gaming companies (https://howtostartanllc.com/business-ideas/video-game-company). Others have done work in accessing the success of a gaming company in the form of its employees and their skill sets. It correlates good mentorship and lots of experiences with having a successful gaming business/company (https://www.gamedesigning.org/career/start-a-video-game-company/) (https://www.redbull.com/ie-en/how-to-start-a-games-studio-with-three-knots). While there isn’t one singular measure of success or potential in forming a gaming company, looking at location data seemed to have a plethora of data to filter through and assess while the other factors like finances and team size wouldn’t give us the same opportunity for interpretation. Within the past two years peopl have question how to maintain gaming companies. Gaming teams often move out their players and creators to have a better chance at success. Within the past two years it has been revealed that most eSports teams are actually losing money by staying together, so learning how to create and maintain a gaming company is important, just as important as the people who play them.
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+East, Tom. “How to Start Your Own Games Studio.” Red Bull, Red Bull, 16 Feb. 2022, https://www.redbull.com/ie-en/how-to-start-a-games-studio-with-three-knots. “How to Start a Video Game Company.” HowToStartAnLLC.com, TRUiC Team, 8 Oct. 2022, https://howtostartanllc.com/business-ideas/video-game-company. Wirtz, Bryan. “How to Start a Video Game Company in 2022 (7 Proven Steps).” Video Game Design and Development, GameDesigning, 26 Jan. 2023, https://www.gamedesigning.org/career/start-a-video-game-company/.
 
-### Implications
+The Dataset
+Where did you find the data? Please include a link to the data source
 
+https://www.kaggle.com/datasets/thedevastator/best-location-for-a-gaming-company?select=companies_design.csv
+
+Who collected the data?
+
+The Devastator on Kaggle
+
+How was the data collected or generated?
+
+The method of data collection was not specified by the creator.
+
+Why was the data collected?
+
+This data was collected to compare the relationship between physical location and ranking/score of companies.
+
+How many observations (rows) are in your data?
+
+The data set consists of 6 dataframes. The first contains 8635 rows. The second contains 3252 and the third contains 497. The fourth and fifth dataframes contain 10.7k rows each and the sixth dataframe has 197 rows.
+
+How many features (columns) are in the data?
+
+The data set consists of 6 dataframes. The first four dataframes have 6 columns each. The fifth has 8 and the sixth has 25 columns.
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data?
+
+As long as we contextualize the data and our analysis of the data to be a strict comparison between the locations provided by the data set, we should have no ethical dilemmas. However, we should be aware of the idea that some gaming companies who have higher success may be present in other countries.
+
+What are possible limitations or problems with this data? (at least 200 words)
+
+One limitation with this data set is that it provides a score/ ranking at the end which only takes this data set into account. If a company has a high ranking because of its location, it doesn’t necessarily have better financial decisions, better inner company relations, or a wide and diverse audience base. However, I do not see that being a problem as we are able to contextualize the data and we can report on what the data says without drawing hasty conclusions. Another limitation that this data set has is that it takes data from only three countries and leaves out 3 of the biggest countries for gaming in the world (China, Japan, and South Korea). So while we can analyze how location affects these companies in the context of North America and Europe, we may not be able to translate these conclusions to other parts of the world. One problem specific to this data set that we saw when we were scanning through it is that one or more columns may be mislabeled. It is labeled as airports when the column actually shows names of companies like Facebook and Google. Unless there are airports within the US, Germany, or Spain that take on these names, it may be a mislabeled column that we will have to fix early in our project.
+
+Implications
 Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
 
-### Limitations & Challenges
+In identifying the most popular and suitable location(s) for gaming companies, these areas may pull in the majority of future gaming corporations, presenting a skewed distribution of gaming companies around the world. This can negatively impact the job market and work opportunities for video game technologists and designers that reside in these lesser-known locations. Shortage of work and gaming companies can negatively influence the gaming culture and technological growth in these areas. Additionally, the high concentration of gaming companies in these well-known locations would drive up demand for technologists and designers in the absence of workforce supply. Policymakers might be able to leverage our insights and shift focus towards helping under-resourced locations gain traction in the gaming scene. Collectively, technologists, designers, and policymakers can work together in identifying barriers to entry, solutions, and leverage recurring patterns within our data to introduce attributes of popular locations in less established areas.
+
+Limitations & Challenges
 What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
 
-### Summary Information
+A possible challenge might be that big companies such as Google, have a large number of offices around the world and might be interpreted differently than various smaller companies with only one office. Additionally, there are other factors that need to be considered in what a good location for an office is. We’ll need to think broader about what benefits these locations give these companies and not solely focus on the geographical location itself. Examples of this would be nearby colleges and their specialties, city demographics, cost of living, and a number of existing offices. A small challenger within the dataset is there is a column that lists company names under the column for airports. This can be easily fixed by changing the name of the column. We are fortunate enough to be working with a good dataset that has multiple files, mostly numeric data, a good amount of rows/columns, and was recently updated!
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+Acknowledgements
 
-### Table
+Is there anyone you would like to thank? A librarian who helped you with your research? A Teaching Assistant? A friend who helped you find your data? Say thank you in this section.
 
-Include a table of aggregate information
-
-Describe why you included the table and what information it reveals
+We would like to thank our TA Jasper for checking in with us during lab sections and being available for help and resources if needed.
 
 ### Chart 1
 
