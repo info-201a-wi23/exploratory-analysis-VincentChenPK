@@ -77,10 +77,20 @@ Include a chart
 
 Describe why you chose this chart and what information it reveals
 
-Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE}
+source("chart1.R", local = knitr::knit_global())
+
+ggplot(data = map) +
+  geom_polygon(aes(x = long, y = lat, group = group)) +
+  geom_point(data = company_map, aes(x = longitude, y = latitude, colour = country_code)) +
+  labs(title = "Gaming companies across the World", 
+       subtitle = "The dots represent gaming companies in each different country code", 
+       caption = "The distribution of gaming companies across the world is displayed on this map", 
+       x = "latitude", y = "longitude", fill = "country_code") 
 ```
+
+For our first graph, we chose to develop a map for a better visualization of what our overarching theme is. Since the data from kaggle includes the latitude and longitude of the gaming companies, and also the country codes, developing a map to visually see how the distribution of gaming companies allows the audience to have a better understanding of the long and dragged out dataset. The map shows the density of gaming companies in each of its location, and the colour coding allows us to identify which specific country these large gaming companies are located in. Our map revealed that the majority of gaming companies are located in the US and Europe, but this data lacks data on gaming companies in Asia.  
 
 ### Chart 2
 ``````{r, echo = FALSE, message = FALSE}
@@ -94,7 +104,7 @@ pie(office_lat_data,
     col = palette("Set2")
 )
 ```
-Describe why you chose this chart and what information it reveals
+
 We chose to use a pie chart as it is an easy and quick way to observe how the data is organized by size. Since the pie chart would be too hard to read if it was sorted by all possible countries that have offices, we decided to sort the offices by their latitude data into 4 sections (-90 to -45, -45 to 0, o to 45, and 45 to 90). Our pie char then revealed that a large majority of the offices fall between the latitudes of 0 and 45.
 
 ### Chart 3
