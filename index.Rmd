@@ -136,3 +136,4 @@ office_prevalence_df <- offices %>%
   slice_head(n = 10)
 kable(office_prevalence_df, format = "markdown")
 ```
+This table illustrates the number of gaming company offices across different countries, sorted from highest to lowest, and displaying only the top 10 results through slicing. We included this table to better understand the distribution of offices around the world, and which countries have adopted the largest gaming company office scene.  

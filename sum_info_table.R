@@ -1,6 +1,7 @@
 library(dplyr)
 library(tidyverse)
 library(kableExtra)
+
 # Load data sets
 offices <- read.csv("data_set/offices5_score.csv", stringsAsFactors = F)
 
