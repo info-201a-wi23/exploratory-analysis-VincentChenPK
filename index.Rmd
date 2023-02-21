@@ -23,9 +23,11 @@ Abstract
 - Our team is interested in exploring how external factors, such as location and gaming culture, influences where gaming companies establish their headquarters. With the gaming scene gaining traction in recent years, this notion is important because its insights can help illustrate the current trajectory of gaming company outreach and rationale for setting up office(s) in certain locations. To address this exploration, we plan to identify patterns and interesting phenomena within our dataset, namely locations seeing the largest concentration of gaming companies and supporting our insights through synthesizing relevant literature.
 
 Keywords
-“Gaming company”, “design offices”, “video games and design”, “design scene”, “gaming demographics”
+
+- “Gaming company”, “design offices”, “video games and design”, “design scene”, “gaming demographics”
 
 Proposal
+
 - Introduction As of 2020, the U.S. tech industry employs over 12.2 million workers and over 558,000 tech companies. While the tech industry grows, the number of tech offices grows as well. Our main question is to identify which locations are the best for gaming companies. This question is important because gaming companies would want the most efficient locations for both their employees and the company as a whole. This impacts where most gaming companies tend to be located and what areas are most prevalent in game design. In the dataset, we will be looking at different gaming companies and where they are located at - countrywide and with longitude/latitude. We will also look at where airports are located to determine how accessible these offices are and if they are located near major airports. We have come up with a few questions to guide our research: 1). Do gaming offices tend to be located near or away from the equator? 2). Which countries have the most gaming company offices? 3). Which airport has the most nearby offices? The motivation for these questions comes from wanting to understand tech companies better and how certain cities are considered more suitable for offices than others. Being able to pursue these questions will help us predict where future tech offices would most likely be located and see the trends behind their geographical locations of them.
 
 Related Work
@@ -36,7 +38,7 @@ East, Tom. “How to Start Your Own Games Studio.” Red Bull, Red Bull, 16 Feb.
 
 The Dataset
 
-https://www.kaggle.com/datasets/thedevastator/best-location-for-a-gaming-company?select=companies_design.csv
+- https://www.kaggle.com/datasets/thedevastator/best-location-for-a-gaming-company?select=companies_design.csv
 
 Who collected the data?
 
@@ -52,7 +54,7 @@ Why was the data collected?
 
 How many observations (rows) are in your data?
 
-The data set consists of 6 dataframes. The first contains 8635 rows. The second contains 3252 and the third contains 497. The fourth and fifth dataframes contain 10.7k rows each and the sixth dataframe has 197 rows.
+- The data set consists of 6 dataframes. The first contains 8635 rows. The second contains 3252 and the third contains 497. The fourth and fifth dataframes contain 10.7k rows each and the sixth dataframe has 197 rows.
 
 How many features (columns) are in the data?
 
