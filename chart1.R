@@ -1,9 +1,8 @@
-read.csv("companies_1m.csv", stringsAsFactors = FALSE)
-company_map <- read.csv("companies_1m.csv", stringsAsFactors = FALSE)
+company_map <- read.csv("data_set/companies_1m.csv", stringsAsFactors = FALSE)
 library("ggplot2")
 library("dplyr")
-install.packages("maps")
-install.packages("mapproj")
+library("maps")
+#install.packages("mapproj")
 
 map <- map_data("world")
 

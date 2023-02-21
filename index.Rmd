@@ -78,7 +78,7 @@ Include a chart
 Describe why you chose this chart and what information it reveals
 
 
-``````{r, echo = FALSE}
+``````{r, echo = FALSE, message = FALSE}
 source("chart1.R", local = knitr::knit_global())
 
 ggplot(data = map) +
@@ -129,6 +129,12 @@ ggplot(data = company_offices_per_country, aes(x = country_code, y = n)) +
 ```
 
 I chose to include a bar chart of the log of the number of company offices in each country because it is still representative of how many more offices there are in some countries without making the visual hard to look at. In the initial variation of this, I graphed the raw number and the US was a very long line where other countries looked closer to 0 on the graph. 
+
+```{r, echo = FALSE, message = FALSE}
+source("sum_info.R")
+```
+## Summary
+Our findings show that the most prevalent company name in the data set is `r most_prevalent_company`. Additionally, our team found that most of the companies are coming out of `r most_companies`, despite the majority of the top gaming company offices being located in `r most_offices`. While `r most_companies` may be the origin of many companies, `r most_offices` appears to be the popularized environment to set up company offices. We also examined the top scoring name of design offices and their associated country and city, which yielded the following results: `r highest_office`. Interestingly, the location USA, San Luis Obispo appears twice on separate accounts, noting that this location may be a well-formed environment for company offices. Lastly, our team analyzed the proportion of the total number of offices from countries outside of the USA to the total number of USA offices, which was (`r office_proportion`). This means that _for every 10 gaming company offices in the USA, there were only about 4 gaming company offices developed in countries outside of the USA_. This showcases a heavily skewed distribution of gaming company offices across different countries, with the majority of offices being developed in the USA.    
 
 ### Table: Prevalence of Gaming Company Offices Across Different Countries 
 ``````{r, echo = FALSE, message = FALSE}
