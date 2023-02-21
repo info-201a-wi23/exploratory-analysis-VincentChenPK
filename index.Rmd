@@ -2,6 +2,8 @@
 title: "Exploratory Analysis"
 output: html_document
 ---
+## The Best Locations for Gaming Company Offices
+
 Authors
 Mark Manlimos (mxpm02@uw.edu)
 
